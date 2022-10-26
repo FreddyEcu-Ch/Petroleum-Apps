@@ -41,3 +41,25 @@ poro_unif = uniform.rvs(loc=0, scale=0.4, size=1000)
 #%% Plot triangular distribution of porosity
 plt.hist(poro_trian)
 plt.show()
+#%%
+# Generate random values for thickness
+thick_norm = norm.rvs(loc=50, scale=70, size=1000)
+thick_norm = np.where(thick_norm < 0, 0, thick_norm)
+thick_norm = np.where(thick_norm > 180, 180, thick_norm)
+
+thick_exp = expon.rvs(loc=0, scale=50, size=1000)
+thick_exp = np.where(thick_exp < 0, 0, thick_exp)
+thick_exp = np.where(thick_exp > 180, 180, thick_exp)
+
+thick_log = lognorm.rvs(s=0.6, loc=0, scale=40, size=1000)
+thick_log = np.where(thick_log < 0, 0, thick_log)
+thick_log = np.where(thick_log > 180, 180, thick_log)
+
+thick_trian = triang.rvs(c=0.3, loc=0, scale=150, size=1000)
+
+thick_unif = uniform.rvs(loc=0, scale=200, size=1000)
+
+#%% Plot exponential distribution of thickness
+print(thick_exp)
+plt.hist(thick_exp)
+plt.show()
