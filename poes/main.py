@@ -51,12 +51,12 @@ poro_norm = np.where(poro_norm > 2, 2, poro_norm)
 #Exponential distribution → loc=1, scale=0.2, size=1000
 poro_exp = expon.rvs(loc=1, scale=0.2, size=1000)
 poro_exp = np.where(poro_exp < 0, 1, poro_exp)
-poro_exp = np.where(poro_exp > 1, 2, poro_exp)
+poro_exp = np.where(poro_exp > 2, 2, poro_exp)
 
 #Lognoraml distribution → s=0.7, loc=1, scale=0.2, size=1000
 poro_log = lognorm.rvs(s=0.7, loc=1, scale=0.2, size=1000)
 poro_log = np.where(poro_log < 0, 1, poro_log)
-poro_log = np.where(poro_log > 1, 2, poro_log)
+poro_log = np.where(poro_log > 2, 2, poro_log)
 
 #Triangular distribution → c=0.3, loc=1, scale=1, size=1000
 poro_trian = triang.rvs(c=0.3, loc=1, scale=1, size=1000)
