@@ -103,3 +103,20 @@ poro_trian = triang.rvs(c=0.3, loc=1, scale=1, size=1000)
 
 #Uniform distribution → loc=1, scale=1, size=1000
 poro_unif = uniform.rvs(loc=1, scale=1, size=1000)
+
+#%% Random values of Swi
+swi_norm=norm.rvs(loc=0.4,scale=0.2,size=1000)
+swi_norm=np.where(swi_norm<0,0,swi_norm)
+swi_norm=np.where(swi_norm>1,1,swi_norm)
+
+swi_exp=expon.rvs(loc=0,scale=0.2,size=1000)
+swi_exp=np.where(swi_exp<0,0,swi_exp)
+swi_exp=np.where(swi_exp>1,1,swi_exp)
+
+swi_log=lognorm.rvs(s=0.8,loc=0,size=1000)
+swi_log=np.where(swi_log<0,0,swi_log)
+swi_log=np.where(swi_log>1,1,swi_log)
+
+swi_trian=triang.rvs(c=0.3,loc=0,scale=1,size=1000)
+
+print(swi_norm)
