@@ -63,3 +63,21 @@ thick_unif = uniform.rvs(loc=0, scale=200, size=1000)
 print(thick_exp)
 plt.hist(thick_exp)
 plt.show()
+
+#%% Generate random values for area
+area_norm = norm.rvs(loc=190, scale=100, size=1000)
+area_norm = np.where(poro_norm < 50, 50, area_norm)
+area_norm = np.where(poro_norm > 1000, 1000, area_norm)
+
+area_exp = expon.rvs(loc=50, scale=100, size=1000)
+area_exp = np.where(poro_exp < 50, 50, area_exp)
+area_exp = np.where(poro_exp > 1000, 1000, area_exp)
+
+area_log = lognorm.rvs(s=0.8, loc=50, scale=100, size=1000)
+area_log = np.where(area_log < 50, 50, area_log)
+area_log = np.where(area_log > 1000, 1000, area_log)
+
+area_trian = triang.rvs(c=0.3, loc=50, scale=450, size=1000)
+
+area_unif = uniform.rvs(loc=50, scale=500, size=1000)
+print(area_unif)
