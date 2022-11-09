@@ -13,7 +13,7 @@ from matplotlib import ticker
 SHEET_SUMMARY = "Summary"
 SHEET_RESULTS = "Results"
 
-# Assing names to the whole columns of dataframe
+# Assign names to the whole columns of dataframe
 VARIABLES = "Variables"
 DISTRIBUTIONS = "Distributions"
 LOC = "Loc"
@@ -47,7 +47,7 @@ def main():
     sheet[DET_POES].value = poes(*params)
 
     # Calculate STOCHASTIC STOIIP
-    df_poes = sheet[DET_POES].options(pd.DataFrame, expand="table", index=False).value
+    df_poes = sheet[DF_POES].options(pd.DataFrame, expand="table", index=False).value
 
     # Call realizations cell
     realizations = int(sheet[REALIZATIONS].value)
@@ -56,7 +56,7 @@ def main():
     seed = int(sheet[SEED].value)
 
     # Define random values for STOIIP Parameters
-    input_col_names = df_poes[VARIABLES].to_list()
+    input_col_names = df_poes["Variables"].to_list()
     area_col, h_col, poro_col, swi_col, boi_col = tuple(input_col_names)
     input_idx = [A_IDX, H_IDX, PORO_IDX, SWI_IDX, BOI_IDX]
     input_dict = dict(zip(input_col_names, input_idx))
@@ -108,7 +108,7 @@ def main():
         pd.DataFrame, expand="table", index=False
     ).value = df_results
 
-    # Create Histogram from stochastic STOIIP
+    # # Create Histogram from stochastic STOIIP
     eng_formatter = ticker.EngFormatter()
     sns.set_style("white")
     fig = plt.figure(figsize=(8, 6))
