@@ -56,7 +56,7 @@ def main():
     seed = int(sheet[SEED].value)
 
     # Define random values for STOIIP Parameters
-    input_col_names = df_poes["Variables"].to_list()
+    input_col_names = df_poes[VARIABLES].to_list()
     area_col, h_col, poro_col, swi_col, boi_col = tuple(input_col_names)
     input_idx = [A_IDX, H_IDX, PORO_IDX, SWI_IDX, BOI_IDX]
     input_dict = dict(zip(input_col_names, input_idx))
