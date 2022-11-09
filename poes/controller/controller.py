@@ -143,7 +143,7 @@ def main():
     )
 
     ax.xaxis.set_major_formatter(eng_formatter)
-    plt.xlabel("STOIIP")
+    plt.xlabel("STOIIP (STB)")
     plt.suptitle("Stochastic STOIIP")
     plt.legend(loc=0)
 
