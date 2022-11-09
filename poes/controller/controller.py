@@ -89,9 +89,9 @@ def main():
     summary_stoc_results = [
         results_dict[STOC_POES].mean(),
         results_dict[STOC_POES].std(),
-        np.percentile(results_dict[STOC_POES], 90),
-        np.percentile(results_dict[STOC_POES], 50),
         np.percentile(results_dict[STOC_POES], 10),
+        np.percentile(results_dict[STOC_POES], 50),
+        np.percentile(results_dict[STOC_POES], 90),
     ]
 
     # Send stochastic values to MS Excel
