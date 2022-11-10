@@ -1,4 +1,4 @@
-# Import Pyhton Libraries
+# Import Python Libraries
 import xlwings as xw
 import pandas as pd
 import numpy as np
@@ -37,7 +37,7 @@ STOC_POES = "stoc_poes"
 STOC_ARRAY = "stoc_array"
 
 
-# Create main function to connect controller with fron-end (MS Excel)
+# Create main function to connect controller with front-end (MS Excel)
 def main():
     wb = xw.Book.caller()
     sheet = wb.sheets[SHEET_SUMMARY]
